@@ -107,13 +107,12 @@ var url = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_week.ge
     
     legend.onAdd = function() {
         var div = L.DomUtil.create("div", "info legend");
-        var colors = ["2ecc71", "abebc6","yellow","f8c471","orange","red"];
+        var colors = ["#2ecc71", "#abebc6","yellow","#f8c471","orange","red"];
         var grades = [0, 1, 2, 3, 4, 5];
 
         for (var i = 0; i < grades.length; i++) {
-            div.innerHTML +=
-              "<i style='background: " + colors[i] + "'></i> " +
-              grades[i] + (grades[i + 1] ? "&ndash;" + grades[i + 1] + "<br>" : "+");
+        
+            div.innerHTML += "<li style='background: " + colors[i] + "'>"+grades[i]+"</li> " 
         }
         return div;
         }
